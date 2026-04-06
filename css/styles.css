@@ -1,7 +1,7 @@
 /* Michroma Font */
 @font-face {
     font-family: 'Michroma';
-    src: url('../HomePage/fonts/Michroma/Michroma-Regular.ttf') format('truetype');
+    src: url('fonts/Michroma/Michroma-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -20,13 +20,6 @@ body {
     background-color: #ffffff;
     color: #000000;
     min-height: 100vh;
-}
-
-/* Page wrapper with blue border */
-.page-wrapper {
-    border: 4px solid #3a7ca5;
-    min-height: 100vh;
-    padding: 30px 40px;
 }
 
 /* Header */
@@ -57,13 +50,11 @@ header {
 }
 
 .header-logo {
-    width: 90px;
-    height: 90px;
-    background-color: #d9d9d9;
+    width: 200px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
 }
 
 .header-logo img {
