@@ -145,6 +145,8 @@ header {
 .page-content h1 {
     font-size: clamp(1.45rem, 2.1vw, 2rem);
     margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(192, 221, 218, 0.75);
 }
 
 .intro-line {
@@ -164,7 +166,7 @@ header {
 .hero-text {
     border: 1px solid var(--line);
     border-radius: 0;
-    background: rgba(241, 241, 241, 0.95);
+    background: rgba(192, 221, 218, 0.22);
     padding: 18px;
 }
 
@@ -197,6 +199,8 @@ header {
     font-size: 1.02rem;
     color: var(--brand);
     margin-bottom: 12px;
+    padding-left: 10px;
+    border-left: 3px solid rgba(192, 221, 218, 0.9);
 }
 
 .chip-group {
