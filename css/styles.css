@@ -18,9 +18,6 @@
     --line: rgba(119, 85, 55, 0.34);
     --brand: var(--old-copper);
     --brand-soft: var(--butter-yellow);
-    --accent: var(--old-copper);
-    --radius: 0;
-    --shadow: 0 12px 30px rgba(119, 85, 55, 0.12);
 }
 
 *,
@@ -257,32 +254,6 @@ header {
     margin-bottom: 4px;
 }
 
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 14px;
-    margin-top: 12px;
-}
-
-.info-card {
-    border: 1px solid var(--line);
-    border-left: 5px solid var(--brand);
-    border-radius: 0;
-    background: rgba(241, 241, 241, 0.97);
-    padding: 16px;
-}
-
-.info-card h3 {
-    font-size: 0.95rem;
-    margin-bottom: 6px;
-}
-
-.info-card p {
-    font-size: 0.77rem;
-    color: var(--muted);
-    line-height: 1.7;
-}
-
 .project-list {
     display: grid;
     gap: 14px;
@@ -302,11 +273,20 @@ header {
     margin-bottom: 4px;
 }
 
+.project-card h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.project-card h3 a:hover {
+    text-decoration: underline;
+}
+
 .project-meta {
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: var(--accent);
+    color: var(--brand);
     margin-bottom: 10px;
 }
 
@@ -316,6 +296,36 @@ header {
     color: var(--muted);
     font-size: 0.78rem;
 }
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 190px;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.works-card {
+    border: 1px solid var(--line);
+    background: rgba(241, 241, 241, 0.97);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 6px;
+    overflow: hidden;
+}
+
+.works-card.wide { grid-column: span 2; }
+.works-card.tall { grid-row: span 2; }
+
+.works-card h3 {
+    font-size: 1rem;
+    color: var(--brand);
+}
+
+.works-card.teal   { background: rgba(192, 221, 218, 0.5); }
+.works-card.yellow { background: rgba(251, 226, 157, 0.45); }
 
 .contact-list {
     list-style: none;
@@ -354,7 +364,7 @@ header {
     gap: 10px;
 }
 
-.featured-area h2 {
+.featured-area h1 {
     font-size: clamp(1.25rem, 2.6vw, 2rem);
 }
 
@@ -381,35 +391,6 @@ header {
     background: rgba(192, 221, 218, 0.78);
 }
 
-.site-link-list {
-    margin-top: 14px;
-    display: grid;
-    gap: 11px;
-}
-
-.site-link-item {
-    border: 1px solid var(--line);
-    border-radius: 0;
-    background: rgba(241, 241, 241, 0.97);
-    padding: 14px;
-}
-
-.site-link-item a {
-    color: var(--brand);
-    text-decoration: none;
-}
-
-.site-link-item a:hover {
-    text-decoration: underline;
-}
-
-.site-link-item p {
-    margin-top: 6px;
-    color: var(--muted);
-    font-size: 0.76rem;
-    line-height: 1.72;
-}
-
 @media (max-width: 980px) {
     .main-content {
         grid-template-columns: 1fr;
@@ -427,6 +408,14 @@ header {
 
     .hero-block {
         grid-template-columns: 1fr;
+    }
+
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .works-card.tall {
+        grid-row: span 1;
     }
 }
 
@@ -453,9 +442,15 @@ header {
     }
 
     .project-card,
-    .site-link-item,
-    .info-card,
     .contact-list li {
         padding: 14px;
     }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 150px;
+    }
+
+    .works-card.wide { grid-column: span 1; }
+    .works-card.tall { grid-row: span 1; }
 }
