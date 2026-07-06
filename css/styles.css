@@ -323,6 +323,16 @@ header {
 .works-card.wide { grid-column: span 2; }
 .works-card.tall { grid-row: span 2; }
 
+a.works-card {
+    color: var(--ink);
+    text-decoration: none;
+    transition: border-color 0.22s ease;
+}
+
+a.works-card:hover {
+    border-color: var(--brand);
+}
+
 .works-card h3 {
     font-size: 1rem;
     color: var(--brand);
@@ -393,6 +403,12 @@ header {
 
 .hero-link:hover {
     background: rgba(192, 221, 218, 0.78);
+}
+
+.hero-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 @media (max-width: 980px) {
